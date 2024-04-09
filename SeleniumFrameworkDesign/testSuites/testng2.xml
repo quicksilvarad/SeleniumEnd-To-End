@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<groups>
+<run>
+<include name="data"/>
+<include name="ErrorTest"/>
+</run>
+</groups>
+<listeners>
+<listener class-name="newPack.TestComponents.Listener"/>
+</listeners>
+  <test thread-count="5" name="Submit Order Test">
+    <classes>
+      <class name="newPack.Test.StandaloneFrameworkDesign"/>
+      <class name="newPack.TestComponents.BaseTest"/>
+      </classes>
+      </test>
+      <test thread-count="5" name="Error Test">
+      <classes>
+      <class name="newPack.Test.ErrorValidationTest"/>
+      <class name="newPack.TestComponents.BaseTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
