@@ -37,9 +37,9 @@ public class MultipleWindowsDemo {
         FileUtils.copyFile(file, new File("F://logo.png"));
         System.out.println(name.getRect().getDimension().getHeight());
         System.out.println(name.getRect().getDimension().getWidth());
-         
-        
-        
+
+
+
 
 	}
 

@@ -8,14 +8,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 public class StreamsDemo {
 
-	
+
 		// TODO Auto-generated method stub
-		public void streamFilter() 
+		public void streamFilter()
 		{
 			ArrayList<String> a = new ArrayList();
 			a.add("Wilson");
@@ -23,14 +22,14 @@ public class StreamsDemo {
 			a.add("Petern");
 			a.add("Ram");
 			a.add("Charles");
-			
+
 			ArrayList<String> b = new ArrayList();
 			b.add("Entebbe");
 			b.add("Dimitry");
 			b.add("Mgobo");
 			b.add("Salim");
 			b.add("Raghav");
-			
+
 			//there's no life for intermediate operation if terminal op is not present
 			//terminal operation will execute only if intermediate op returns true
 			//map method to be used when the data received from filter method requires modification
@@ -46,17 +45,17 @@ public class StreamsDemo {
 			System.out.println(f);
 			SoftAssert m = new SoftAssert();
 			m.assertTrue(f);
-			
+
 		}
-		
-		public void streamCollector() 
+
+		public void streamCollector()
 		{
-          
+
 			List<String>g =Stream.of("August","Adam","Alex","Aditya").filter(s->s.startsWith("A") ).sorted().map(v->v.toUpperCase()).collect(Collectors.toList());
 		    g.forEach(s->System.out.println(s));
 		}
-		
-		public void lectureAssignment() 
+
+		public void lectureAssignment()
 		{
 			List<Integer> numbers = Arrays.asList(1,2,1,4,2,4,5,2,67,8,54,3);
 			Set<Integer> set = new HashSet();
@@ -65,13 +64,13 @@ public class StreamsDemo {
 			System.out.println("-------Using stream and lambda expressions--------");
 			numbers.stream().sorted().distinct().forEach(u->System.out.println(u));
 		}
-		
+
 		public static void main(String[] args) {
-			
+
 			StreamsDemo s = new StreamsDemo();
 			s.lectureAssignment();
 		}
 
-	
+
 
 }

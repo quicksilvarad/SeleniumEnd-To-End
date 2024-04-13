@@ -1,22 +1,16 @@
 package newPack;
 
-import static org.testng.Assert.ARRAY_MISMATCH_TEMPLATE;
-
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public class StreamsWithSelenium {
 
@@ -39,7 +33,7 @@ public class StreamsWithSelenium {
         driver.switchTo().window(childWindow);
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         //driver.findElement(By.xpath("//table//tr/th[1]"));
-        
+
         //List<WebElement> wb = driver.findElements(By.xpath("//table//tr/td[1]"));
         //List<String> l =  wb.stream().map(s->s.getText()).collect(Collectors.toList());
         //List<String> o =  l.stream().sorted().collect(Collectors.toList());
@@ -48,9 +42,9 @@ public class StreamsWithSelenium {
         //pagination concept -> searching for an element across multiple pages within a page
         do {
         	List<WebElement> wb = driver.findElements(By.xpath("//table//tr/td[1]"));
-         price = wb.stream().filter(s->s.getText().contains("Beans")).map(s->getVeggiePrice(s)).collect(Collectors.toList()); 
+         price = wb.stream().filter(s->s.getText().contains("Beans")).map(s->getVeggiePrice(s)).collect(Collectors.toList());
         price.forEach(element->System.out.println(element));
-        if(price.size()<1) 
+        if(price.size()<1)
         {
         	driver.findElement(By.cssSelector("a[aria-label='Next']")).click();
         	Thread.sleep(2000);
@@ -59,7 +53,7 @@ public class StreamsWithSelenium {
 	}
 
 	//custom method to get the price
-	public static String getVeggiePrice(WebElement b) 
+	public static String getVeggiePrice(WebElement b)
 	{
 		return b.findElement(By.xpath("following-sibling::td[1]")).getText();
 	}

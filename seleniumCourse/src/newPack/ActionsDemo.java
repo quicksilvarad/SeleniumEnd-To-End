@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class ActionsDemo {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		System.setProperty("EdgeDriver", "C:\\Users\\Asus\\Projects\\Selenium\\geckodriver");
 		WebDriver driver = new FirefoxDriver();

@@ -15,7 +15,7 @@ public class Assignment5 {
 		driver.switchTo().frame(driver.findElement(By.cssSelector("frame[name='frame-top']")));
 		driver.switchTo().frame(driver.findElement(By.cssSelector("frame[name='frame-middle']")));
 		System.out.println(driver.findElement(By.tagName("body")).getText());
-		
+
 	}
 
 }

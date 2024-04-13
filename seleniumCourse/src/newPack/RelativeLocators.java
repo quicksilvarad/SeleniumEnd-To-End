@@ -1,7 +1,5 @@
 package newPack;
-import static org.openqa.selenium.support.locators.RelativeLocator.*;
-
-import java.time.Duration;
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +13,7 @@ public class RelativeLocators {
 		System.setProperty("EdgeDriver", "C:\\Users\\Asus\\Projects\\Selenium\\geckodriver");
 		WebDriver driver = new FirefoxDriver();//used to wait till the element comes in viewable state
         driver.get("https://www.rahulshettyacademy.com/angularpractice");
-        
+
        WebElement wb =  driver.findElement(By.cssSelector("input[name='name']"));
        WebElement rel = driver.findElement(with(By.tagName("label")).above(wb));
        System.out.println(rel.getText());

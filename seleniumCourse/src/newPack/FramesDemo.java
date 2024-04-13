@@ -21,7 +21,7 @@ public class FramesDemo {
 		a.dragAndDrop(source, target).build().perform();
 		driver.switchTo().defaultContent();//moves back from frame
 		System.out.println(driver.findElement(By.xpath("//head/title")).getText());
-		
+
 
 	}
 

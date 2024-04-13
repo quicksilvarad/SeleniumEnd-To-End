@@ -20,39 +20,39 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class StandaloneScenarioSelenium {
-public static void main(String[] args) throws InterruptedException 
+public static void main(String[] args) throws InterruptedException
 {
-	
+
 
 
 	WebDriverManager.firefoxdriver();
 	WebDriver driver = new FirefoxDriver();
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	driver.manage().window().maximize();
-	
+
 	//Landingpage implementation starts here
-	
+
 	driver.get("https://rahulshettyacademy.com/client");
 	driver.findElement(By.id("userEmail")).sendKeys("tikori@gmail.com");
 	driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tikori69$");
 	driver.findElement(By.cssSelector("input[type='submit']")).click();
 	//Landingpage implementation ends here
-	
+
 	Thread.sleep(2000);
 	String z = "ZARA COAT 3";
 	List<String> v = Arrays.asList("ADIDAS ORIGINAL","ZARA COAT 3","IPHONE 13 PRO");
 	int x = v.size();
 	System.out.println(x);
-	
+
 	//ProductCatalogue implementation starts here
 	//ProductCatalogue productCatalogue = new ProductCatalogue(driver);
 	List<WebElement> listOfProducts = driver.findElements(By.cssSelector("div[class='card-body']"));
 	//wb.stream().filter(element->v.contains(element.findElement(By.cssSelector("b")).getText())).forEach(x->x.findElement(By.xpath("//button[2]")).click());
-	listOfProducts.forEach(element->{ 
-		System.out.println(element.findElement(By.cssSelector("b")).getText());  
-		if(v.contains(element.findElement(By.cssSelector("b")).getText())) 
-	      { 
-		    element.findElement(By.cssSelector("button[class='btn w-10 rounded']")).click(); 
+	listOfProducts.forEach(element->{
+		System.out.println(element.findElement(By.cssSelector("b")).getText());
+		if(v.contains(element.findElement(By.cssSelector("b")).getText()))
+	      {
+		    element.findElement(By.cssSelector("button[class='btn w-10 rounded']")).click();
 		try {
 		Thread.sleep(2000);
 	} catch (InterruptedException e) {
@@ -81,14 +81,14 @@ public static void main(String[] args) throws InterruptedException
 			a.sendKeys(Keys.ARROW_DOWN).build().perform();
 	    System.out.println(element.getText());
 	    if(element.getText().equalsIgnoreCase(country))
-	      {   
+	      {
 	       element.click();
 	      }});
-	
+
 	driver.findElement(By.cssSelector("div[class='actions'] a")).click();
 	//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='actions']//a")));
 	Thread.sleep(4000);
-	
+
 	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("label[class='ng-star-inserted']"))));
 	List <WebElement> orderList= driver.findElements(By.cssSelector("label[class='ng-star-inserted']"));
 	System.out.println("Following are the orders grabbed:");

@@ -22,12 +22,12 @@ public class FilterUsingStreams {
 		List<WebElement> l = driver.findElements(By.xpath("//tr/td[1]"));
 		l.forEach(s->System.out.println(s.getText()));
 		System.out.println("------------------");
-		
+
 		List<String> receivedList=l.stream().map(s->s.getText()).collect(Collectors.toList());
 		receivedList.forEach(s->System.out.println(s));
 		List<WebElement>filteredList=l.stream().filter(s->s.getText().contains(v)).collect(Collectors.toList());
 		Assert.assertFalse(filteredList.equals(l));
-		
+
 
 	}
 

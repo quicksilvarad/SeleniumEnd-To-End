@@ -23,13 +23,13 @@ public class Assignment7 {
 	    wb.forEach(element->
 	    {System.out.println("No. of rows: " + element.findElements(By.tagName("tr")).size());
 	    System.out.println("No. of columns: " + element.findElements(By.cssSelector("tr th")).size());
-	    
+
 	    });
 	    List<WebElement> wb2 = driver.findElements(By.xpath("//table[@class='table-display']/tbody/tr[3]"));
 	    wb2.forEach(element->{
 	    	System.out.println(element.getText());
 	    });
-	    
+
 	}
 
 }

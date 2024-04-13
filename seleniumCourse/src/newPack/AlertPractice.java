@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
-
 public class AlertPractice {
 
 	public static void main(String[] args) throws InterruptedException {

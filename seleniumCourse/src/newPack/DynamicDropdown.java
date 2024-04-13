@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DynamicDropdown {
-	
-	
-	public static void main(String[] args) throws InterruptedException 
+
+
+	public static void main(String[] args) throws InterruptedException
 	{
 		System.setProperty("EdgeDriver", "C:\\Users\\Asus\\Projects\\Selenium\\geckodriver");
 		WebDriver driver = new FirefoxDriver();
@@ -19,8 +19,8 @@ public class DynamicDropdown {
 		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR']//a[@value='PNQ']")).click();//alternate way to provide xpath without using indexes
 		//driver.findElement(By.xpath("(//a[@value='PNQ'])[2]")).click();
 		driver.close();
-		
-		
+
+
 	}
 
 }

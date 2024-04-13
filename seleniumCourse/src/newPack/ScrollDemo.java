@@ -24,21 +24,21 @@ public class ScrollDemo {
 	    js.executeScript("window.scrollBy('0','700')");
 	    Thread.sleep(3000);
 	    js.executeScript("document.querySelector(\".tableFixHead\").scrollTop=5000");
-	    
+
 	    List<WebElement> wb = driver.findElements(By.cssSelector("div[class='tableFixHead'] td:nth-child(4)"));
 	    wb.forEach(element->{
-	    
+
 	    	x = x + Integer.parseInt(element.getText());
 	    	System.out.println(Integer.parseInt(element.getText()));
-	    	
+
 	    });
 	    System.out.println(x);
 	    int total= Integer.parseInt(driver.findElement(By.cssSelector("div.totalAmount")).getText().split(": ")[1]);
 	    Assert.assertEquals(total, x);
-	    
-	   
-	    
-	    
+
+
+
+
 
 	}
 

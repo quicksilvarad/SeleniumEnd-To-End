@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class AutoDropdown {
-	
+
 	public static void main(String[] args) throws InterruptedException
 	{
 		System.setProperty("EdgeDriver", "C:\\Users\\Asus\\Projects\\Selenium\\geckodriver");
@@ -18,20 +18,20 @@ public class AutoDropdown {
 		driver.findElement(By.cssSelector("li[class='ui-menu-item'] a"));
 		Thread.sleep(3000);
 		List<WebElement> webElements = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
-		
+
 		webElements.forEach(element -> {
 			if(element.getText().equalsIgnoreCase("India")) {
-				
+
 				System.out.println("Successful");
 				element.click();
 			}
-			else 
+			else
 			{
 				System.out.println("Failed");
 			}
 		}
 		);
-		
+
 	}
 
 }

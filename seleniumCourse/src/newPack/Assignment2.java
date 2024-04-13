@@ -3,7 +3,6 @@ package newPack;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class Assignment2 {
 
@@ -13,7 +12,7 @@ public class Assignment2 {
 		WebDriver driver = new FirefoxDriver();
 	    driver.manage().window().maximize();
 	    driver.get("https://rahulshettyacademy.com/angularpractice/");
-		
+
 		driver.findElement(By.name("name")).sendKeys("Jennifer");
 
 		driver.findElement(By.name("email")).sendKeys("Jennifer@rsa.com");

@@ -29,7 +29,7 @@ public class Miscellaneous {
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Grand Theft Auto VI']")));
 	    File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	    FileUtils.copyFile(src, new File("F:\\screenshot.jpg"));
-	   
+
 
 	}
 
